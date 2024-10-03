@@ -1,0 +1,265 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.app , .manager-page{
+  padding: 0px;
+  background-color: #F0F0F0;
+}
+
+.content{
+  padding: 48px 120px;
+}
+
+.content1{
+  padding: 48px 500px;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:hover {
+  color: #3F93F5; /* Изменение цвета при наведении */
+}
+
+a:active {
+  color: #3F93F5; /* Изменение цвета при активации (нажатии) */
+}
+
+select {
+  appearance: none; /* Убираем стандартный стиль элемента в различных браузерах */
+  padding: 0.5em; /* Добавляем небольшой внутренний отступ */
+  font-size: inherit; /* Используем размер шрифта родительского элемента */
+  border: 1px solid #ccc; /* Добавляем рамку */
+  border-radius: 4px; /* Скругляем углы */
+  background-color: #fff; /* Цвет фона */
+  color: #333; /* Цвет текста */
+}
+
+/* Дополнительный стиль для выделения в фокусе */
+select:focus {
+  outline: none; /* Убираем стандартный фокус */
+  border-color: #007bff; /* Изменяем цвет рамки при фокусе */
+}
+
+.desktop-menu {
+  display: flex;
+  justify-content: space-between; /* Распределение элементов по краям */
+  align-items: center;
+  position: sticky; /* Фиксированное позиционирование */
+  top: 0; /* Закрепление меню вверху */
+  background-color: #fff; /* Цвет фона */
+  padding: 0px; /* Поля внутри меню */
+  z-index: 1000; /* Поднимаем над другими элементами */
+  font-size: 24px;
+  padding: 0 120px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.logo img{
+  max-height: 42px;
+  padding-right: 13px;
+}
+
+.desktop-menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.desktop-menu ul li {
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.mobile-menu ul li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.burger-icon {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.burger-icon > div {
+  width: 100%;
+  height: 3px;
+  background-color: #007bff;
+  margin-bottom: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.burger-icon > div:first-child {
+  margin-top: 0; /* Убираем margin-top у первой линии */
+}
+
+.burger-icon.open > div:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px); /* Первая линия: поворот на 45 градусов и смещение */
+}
+
+.burger-icon.open > div:nth-child(2) {
+  opacity: 0; /* Вторая линия: скрытие */
+}
+
+.burger-icon.open > div:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px); /* Третья линия: поворот на -45 градусов и смещение */
+}
+
+@media (max-width: 768px) {
+  .content{
+    padding: 48px;
+  }
+  
+  .desktop-menu {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    z-index: 998;
+  }
+
+  .mobile-menu.open {
+    display: block;
+    transform: translateX(0%);
+  }
+
+  .mobile-menu ul {
+    flex-direction: column;
+  }
+
+  .mobile-menu ul li {
+    margin-bottom: 20px;
+  }
+
+  /* Стили для крестика */
+  .burger-icon {
+    display: block;
+  }
+
+  .burger-icon > div {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: #007bff;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .burger-icon > div:first-child {
+    margin-top: 0;
+  }
+
+  .burger-icon.open > div:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .burger-icon.open > div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-icon.open > div:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+.footer {
+  background-color: #3F93F5;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+  flex-direction: column;
+  padding: 32px 50px;
+  padding: 48px 120px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start;
+}
+
+.footer-logo img {
+  margin-right: 10px;
+  max-height: 42px;
+}
+
+.footer-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content:flex-end;
+}
+
+.footer-menu li {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.footer-down{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .footer {
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-menu {
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.footer-menu li {
+  margin: 10px 0;
+}
+}
